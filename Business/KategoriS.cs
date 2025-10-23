@@ -12,9 +12,10 @@ namespace Business
     public class KategoriS : IKategoriS
     {
         protected readonly IKategori _kategori;
-        public KategoriS()
+        public KategoriS(IKategori kategori)
+        //public KategoriS(KategoriD kategori)
         {
-            _kategori = new KategoriD();
+            _kategori = kategori;
         }
 
         public Task Add(Kategori K)

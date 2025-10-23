@@ -8,9 +8,9 @@ namespace Business
     public class IlacS : IIlacS
     {
         protected readonly IIlac _ilac;
-        public IlacS()
+        public IlacS(IIlac ılac)
         {
-            _ilac = new IlacD();
+            _ilac = ılac;
         }
 
         public Task Add(Ilac ilac)

@@ -16,13 +16,20 @@ namespace UI
 {
     public partial class frmIlaclar : DevExpress.XtraEditors.XtraForm
     {
-        IMarkaS _markas = new MarkaS();
+        protected readonly IMarkaS _markas;
+        protected readonly IKategoriS _kategoris;
+        protected readonly IIlacS _ilacs;
+        /*IMarkaS _markas = new MarkaS();
         IKategoriS _kategoris = new KategoriS();
-        IIlacS _ilacs = new IlacS();
+        IIlacS _ilacs = new IlacS();*/
 
-        public frmIlaclar()
+        public frmIlaclar(IKategoriS kategoris, IIlacS ilacs, IMarkaS markas)
+        //public frmIlaclar(KategoriS kategoris, IlacS ilacs, MarkaS markas)
         {
             InitializeComponent();
+            _kategoris = kategoris;
+            _ilacs = ilacs;
+            _markas = markas;
         }
 
         private async void frmIlaclar_Load(object sender, EventArgs e)
@@ -67,12 +74,12 @@ namespace UI
             if (Markalo.EditValue == null)
             {
                 XtraMessageBox.Show("Lütfen bir Marka seçin.", "Eksik Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                return;
             }
             if (Katagorilo.EditValue == null)
             {
                 XtraMessageBox.Show("Lütfen bir Kategori seçin.", "Eksik Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                return;
             }
             Ilac yeniIlac = new Ilac();
             yeniIlac.IlacAdi = textEdit1.Text;
@@ -89,9 +96,48 @@ namespace UI
             Temizle();
         }
 
-        private void GüncelleBT_Click(object sender, EventArgs e)
+        private async void GüncelleBT_Click(object sender, EventArgs e)
         {
+            int secilenId;
+            bool idParseBasarili = int.TryParse(label1.Text, out secilenId);
 
+            if (!idParseBasarili || secilenId <= 0)
+            {
+                XtraMessageBox.Show("Lütfen güncellemek için listeden bir ilaç seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            try
+            {
+                // Önce mevcut ilacı veritabanından al
+                var mevcutIlac = await _ilacs.GetById(secilenId);
+                if (mevcutIlac == null)
+                {
+                    XtraMessageBox.Show("Seçili ilaç bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Mevcut ilacın değerlerini güncelle
+                mevcutIlac.IlacAdi = textEdit1.Text;
+                mevcutIlac.Barkod = textEdit2.Text;
+                mevcutIlac.ReceteTuru = textEdit3.Text;
+                mevcutIlac.Birim = textEdit4.Text;
+                mevcutIlac.SatisFiyati = Fiyat.Value;
+                mevcutIlac.Aktif = true;
+                mevcutIlac.MarkaId = (int)Markalo.EditValue;
+                mevcutIlac.KategoriID = (int)Katagorilo.EditValue;
+
+                await _ilacs.Update(mevcutIlac);
+
+                XtraMessageBox.Show("İlaç başarıyla güncellendi!", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                yenile();
+                Temizle();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Güncelleme işlemi sırasında bir hata oluştu:\n\n" + ex.Message,
+                    "Güncelleme Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private async void yenile()

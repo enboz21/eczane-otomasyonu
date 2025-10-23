@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataAccess.Context;
 using DataAccess.Interface;
 using Entities;
 using Entities.DTOs;
@@ -12,6 +13,11 @@ namespace DataAccess
 {
     public class IlacD : Generic<Ilac>, IIlac
     {
+        protected readonly Scontext _context;
+        public IlacD(Scontext context) : base(context)
+        {
+            _context = context;
+        }
         public async Task<List<IlacDetayDto>> IlacGetDetay()
         {
             var a = await _context.Ilaclar

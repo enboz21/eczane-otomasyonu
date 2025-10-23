@@ -12,9 +12,9 @@ namespace Business
     public class MarkaS : IMarkaS
     {
         protected readonly IMarka _marka;
-        public MarkaS()
+        public MarkaS(IMarka marka)
         {
-            _marka = new MarkaD();
+            _marka = marka;
         }
         public Task Add(Marka K)
         {

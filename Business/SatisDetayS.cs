@@ -12,9 +12,9 @@ namespace Business
     public class SatisDetayS : ISatisDetayS
     {
         protected readonly ISatisDetay _satisDetay;
-        public SatisDetayS()
+        public SatisDetayS(SatisDetayD satisDetay)
         {
-            _satisDetay = new SatisDetayD();
+            _satisDetay = satisDetay;
         }
 
         public Task Add(SatisDetay sd)

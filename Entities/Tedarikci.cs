@@ -9,10 +9,10 @@ namespace Entities
     public class Tedarikci
     {
         public int TedarikciId { get; set; }
-        public string TedarikciAd { get; set; }
-        public String? Tedarikcitel { get; set; }
-        public String? TedarikciAdres { get; set; }
-        public String? TedarikciEmail { get; set; }
+        public string TedarikciAdi { get; set; }
+        public String? Telefon { get; set; }
+        public String? Adres { get; set; }
+        public String? Eposta { get; set; }
         public bool Aktif { get; set; } = true;
 
 

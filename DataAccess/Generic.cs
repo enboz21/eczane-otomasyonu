@@ -12,9 +12,9 @@ namespace DataAccess
     public class Generic<T> : IGeneric<T> where T : class
     {
         protected readonly Scontext _context;
-        public Generic()
+        public Generic(Scontext scontext)
         {
-            _context = new Scontext();
+            _context = scontext;
         }
 
         public async Task Delete(int id)
@@ -46,14 +46,11 @@ namespace DataAccess
             return _context.SaveChangesAsync();
         }
 
-        public Task Update(T entity)
+        public async Task Update(T entity)
         {
-            _context.Entry(entity).State = EntityState.Modified;
-            return _context.SaveChangesAsync();
-        }
 
-        internal interface ISatisDetay
-        {
+            _context.Set<T>().Update(entity);
+            await _context.SaveChangesAsync();
         }
     }
 }

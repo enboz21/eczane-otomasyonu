@@ -54,6 +54,7 @@
             ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] { ribbonPage1 });
             ribbon.Size = new Size(864, 158);
             ribbon.StatusBar = ribbonStatusBar;
+            ribbon.Click += ribbon_Click;
             // 
             // btnMarkaYonetimi
             // 

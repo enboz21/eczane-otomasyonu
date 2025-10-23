@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace UI
 {
@@ -17,42 +18,43 @@ namespace UI
         {
             InitializeComponent();
         }
-        private void Formac(DevExpress.XtraEditors.XtraForm formToOpen)
+        private void Formac<TForm>() where TForm : DevExpress.XtraEditors.XtraForm
         {
             foreach (var form in this.MdiChildren)
             {
-                if (form.GetType() == formToOpen.GetType())
+                if (form is TForm)
                 {
                     form.BringToFront();
                     return;
                 }
             }
+            var formToOpen = Program.ServiceProvider.GetRequiredService<TForm>();
             formToOpen.MdiParent = this;
             formToOpen.Show();
         }
-
         private void btnMarkaYonetimi_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Formac(new frmMarkalar());
+            Formac<frmMarkalar>();
         }
         private void btnIlacYonetimi_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Formac(new frmIlaclar());
+            Formac<frmIlaclar>();
         }
-
         private void btnKategoriYonetimi_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Formac(new frmKategoriler());
+            Formac<frmKategoriler>();
         }
-
         private void btnTedarikciYonetimi_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Formac(new frmTedarikciler());
+            Formac<frmTedarikciler>();
         }
-
         private void btnStokGiris_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Formac(new frmStokGiris());
+            Formac<frmStokGiris>();
+        }
+        private void ribbon_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

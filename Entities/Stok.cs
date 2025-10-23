@@ -11,7 +11,6 @@ namespace Entities
     {
         public int StokId { get; set; }
         public DateTime AlisTarihi { get; set; } = DateTime.Now;
-        public int Miktar { get; set; }
         public DateTime SonKullanmaTarihi { get; set; }
         public decimal AlisFiyati { get; set; }
         public int MevcutAdet { get; set; }

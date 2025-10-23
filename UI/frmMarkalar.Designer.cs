@@ -34,8 +34,11 @@
             simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)gridControl1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridViewMarkalar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)textEdit1.Properties).BeginInit();
             SuspendLayout();
             // 
             // gridControl1
@@ -43,7 +46,7 @@
             gridControl1.Location = new Point(12, 122);
             gridControl1.MainView = gridViewMarkalar;
             gridControl1.Name = "gridControl1";
-            gridControl1.Size = new Size(1039, 367);
+            gridControl1.Size = new Size(866, 367);
             gridControl1.TabIndex = 0;
             gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridViewMarkalar });
             // 
@@ -51,6 +54,7 @@
             // 
             gridViewMarkalar.GridControl = gridControl1;
             gridViewMarkalar.Name = "gridViewMarkalar";
+            gridViewMarkalar.RowClick += gridViewMarkalar_RowClick;
             // 
             // labelControl1
             // 
@@ -67,6 +71,7 @@
             simpleButton1.Size = new Size(75, 23);
             simpleButton1.TabIndex = 2;
             simpleButton1.Text = "Ekle";
+            simpleButton1.Click += simpleButton1_Click;
             // 
             // simpleButton2
             // 
@@ -75,6 +80,7 @@
             simpleButton2.Size = new Size(75, 23);
             simpleButton2.TabIndex = 3;
             simpleButton2.Text = "Güncelle";
+            simpleButton2.Click += simpleButton2_Click;
             // 
             // simpleButton3
             // 
@@ -83,12 +89,32 @@
             simpleButton3.Size = new Size(75, 23);
             simpleButton3.TabIndex = 4;
             simpleButton3.Text = "Sil";
+            simpleButton3.Click += simpleButton3_Click;
+            // 
+            // textEdit1
+            // 
+            textEdit1.EditValue = "İLac Adı";
+            textEdit1.Location = new Point(25, 12);
+            textEdit1.Name = "textEdit1";
+            textEdit1.Size = new Size(100, 20);
+            textEdit1.TabIndex = 5;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(641, -3);
+            label1.Name = "label1";
+            label1.Size = new Size(0, 13);
+            label1.TabIndex = 6;
+            label1.Visible = false;
             // 
             // frmMarkalar
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1063, 501);
+            ClientSize = new Size(890, 501);
+            Controls.Add(label1);
+            Controls.Add(textEdit1);
             Controls.Add(simpleButton3);
             Controls.Add(simpleButton2);
             Controls.Add(simpleButton1);
@@ -99,6 +125,7 @@
             Load += frmMarkalar_Load;
             ((System.ComponentModel.ISupportInitialize)gridControl1).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridViewMarkalar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)textEdit1.Properties).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -111,5 +138,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private Label label1;
     }
 }

@@ -12,14 +12,14 @@ namespace Business
     public class TedarikS : ITedarikS
     {
         protected readonly ITedarikci _tedarikci;
-        public TedarikS()
+        public TedarikS(ITedarikci tedarikci)
         {
-            _tedarikci = new TedarikciD();
+            _tedarikci = tedarikci;
         }
 
         public Task Add(Tedarikci K)
         {
-            if (String.IsNullOrWhiteSpace(K.TedarikciAd))
+            if (String.IsNullOrWhiteSpace(K.TedarikciAdi))
             {
                 throw new Exception("Tedarikçi Adı Boş Geçilemez");
             }
@@ -43,7 +43,7 @@ namespace Business
 
         public Task Update(Tedarikci K)
         {
-            if (String.IsNullOrWhiteSpace(K.TedarikciAd))
+            if (String.IsNullOrWhiteSpace(K.TedarikciAdi))
             {
                 throw new Exception("Tedarikçi Adı Boş Geçilemez");
             }

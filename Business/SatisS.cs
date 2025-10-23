@@ -7,9 +7,9 @@ namespace Business
     public class SatisS : ISatisS
     {
         protected readonly ISatis _satis;
-        public SatisS()
+        public SatisS(SatisD satis)
         {
-            _satis = new SatisD();
+            _satis = satis;
         }
 
         public Task Add(Satis K)

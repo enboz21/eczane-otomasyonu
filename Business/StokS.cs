@@ -12,9 +12,9 @@ namespace Business
     public class StokS : IStokS
     {
         protected readonly IStok _stok;
-        public StokS()
+        public StokS(IStok stok)
         {
-            _stok = new StokD();
+            _stok = stok;
         }
 
         public Task Add(Stok stok)
@@ -26,10 +26,6 @@ namespace Business
             else if (stok.MevcutAdet < 0)
             {
                 throw new Exception("Mevcut Adet 0'dan Küçük Olamaz");
-            }
-            else if (stok.Miktar <= 0)
-            {
-                throw new Exception("Miktar 0'dan Küçük veya Eşit Olamaz");
             }
             else if (stok.AlisFiyati <= 0)
             {
@@ -67,10 +63,6 @@ namespace Business
             else if (stok.MevcutAdet < 0)
             {
                 throw new Exception("Mevcut Adet 0'dan Küçük Olamaz");
-            }
-            else if (stok.Miktar <= 0)
-            {
-                throw new Exception("Miktar 0'dan Küçük veya Eşit Olamaz");
             }
             else if (stok.AlisFiyati <= 0)
             {

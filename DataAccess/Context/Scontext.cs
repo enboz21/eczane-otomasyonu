@@ -5,20 +5,24 @@ namespace DataAccess.Context
 {
     public class Scontext : DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+
+        public Scontext(DbContextOptions<Scontext> options) : base(options)
         {
-            IConfigurationRoot configuration = new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json")
-            .Build();
-            string connectionString = configuration.GetConnectionString("DefaultConnection");
-            optionsBuilder.UseSqlServer(connectionString);
         }
+        /* protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+         {
+             IConfigurationRoot configuration = new ConfigurationBuilder()
+             .SetBasePath(Directory.GetCurrentDirectory())
+             .AddJsonFile("appsettings.json")
+             .Build();
+             string connectionString = configuration.GetConnectionString("DefaultConnection");
+             optionsBuilder.UseSqlServer(connectionString);
+         }*/
 
         public DbSet<Tedarikci> Tedarikciler { get; set; }
         public DbSet<Marka> Markalar { get; set; }
         public DbSet<Ilac> Ilaclar { get; set; }
-        public DbSet<Stok> Stoklar { get; set; }
+        public DbSet<Stok> Stok { get; set; }
         public DbSet<Kategori> Kategoriler { get; set; }
         public DbSet<Satis> Satislar { get; set; }
         public DbSet<SatisDetay> SatisDetayları { get; set; }
