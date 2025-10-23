@@ -10,7 +10,7 @@ namespace DataAccess.Interface
     {
         public Task Save(T entity);
         public Task<List<T>> GetAll();
-        public Task Delete(T entity);
+        public Task Delete(int id);
         public Task<T> GetById(int id);
         public Task Update(T entity);
     }

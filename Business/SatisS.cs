@@ -21,9 +21,9 @@ namespace Business
             return _satis.Save(K);
         }
 
-        public Task Delete(Satis K)
+        public Task Delete(int id)
         {
-            return _satis.Delete(K);
+            return _satis.Delete(id);
         }
 
         public Task<List<Satis>> GetAll()

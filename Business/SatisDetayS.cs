@@ -30,9 +30,9 @@ namespace Business
             return _satisDetay.Save(sd);
         }
 
-        public Task Delete(SatisDetay sd)
+        public Task Delete(int id)
         {
-            return _satisDetay.Delete(sd);
+            return _satisDetay.Delete(id);
         }
 
         public Task<List<SatisDetay>> GetAll()

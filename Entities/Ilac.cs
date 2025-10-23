@@ -10,7 +10,7 @@ namespace Entities
     public class Ilac
     {
         public int IlacId { get; set; }
-        public string IlacAd { get; set; }
+        public string IlacAdi { get; set; }
         public String Barkod { get; set; }
         public String ReceteTuru { get; set; }
         public String Birim { get; set; }

@@ -18,16 +18,16 @@ namespace Business
         }
         public Task Add(Marka K)
         {
-            if (String.IsNullOrWhiteSpace(K.MarkaAd))
+            if (String.IsNullOrWhiteSpace(K.MarkaAdi))
             {
                 throw new Exception("Marka Adı Boş Geçilemez");
             }
             return _marka.Save(K);
         }
 
-        public Task Delete(Marka K)
+        public Task Delete(int id)
         {
-            return _marka.Delete(K);
+            return _marka.Delete(id);
         }
 
         public Task<List<Marka>> GetAll()
@@ -42,7 +42,7 @@ namespace Business
 
         public Task Update(Marka K)
         {
-            if (String.IsNullOrWhiteSpace(K.MarkaAd))
+            if (String.IsNullOrWhiteSpace(K.MarkaAdi))
             {
                 throw new Exception("Marka Adı Boş Geçilemez");
             }

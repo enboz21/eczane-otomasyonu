@@ -10,7 +10,7 @@ namespace Business.Interface
     public interface ISatisS
     {
         public Task Update(Satis K);
-        public Task Delete(Satis K);
+        public Task Delete(int id);
         public Task Add(Satis K);
         public Task<Satis> GetById(int id);
         public Task<List<Satis>> GetAll();

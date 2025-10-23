@@ -38,9 +38,9 @@ namespace Business
             return _stok.Save(stok);
         }
 
-        public Task Delete(Stok stok)
+        public Task Delete(int id)
         {
-            return _stok.Delete(stok);
+            return _stok.Delete(id);
         }
 
         public Task<List<Stok>> GetAll()

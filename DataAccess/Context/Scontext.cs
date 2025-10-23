@@ -29,7 +29,7 @@ namespace DataAccess.Context
                .HasIndex(i => i.Barkod)
                .IsUnique();
             modelBuilder.Entity<Marka>()
-               .HasIndex(m => m.MarkaAd)
+               .HasIndex(m => m.MarkaAdi)
                .IsUnique();
             modelBuilder.Entity<Kategori>()
               .HasIndex(k => k.KategoriAdi)

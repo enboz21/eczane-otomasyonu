@@ -17,15 +17,22 @@ namespace DataAccess
             _context = new Scontext();
         }
 
-        public Task Delete(T entity)
+        public async Task Delete(int id)
         {
-            _context.Set<T>().Remove(entity);
-            return _context.SaveChangesAsync();
+
+            var sil = await GetById(id);
+
+            if (sil != null)
+            {
+                _context.Set<T>().Remove(sil);
+                await _context.SaveChangesAsync();
+            }
+
         }
 
-        public Task<List<T>> GetAll()
+        public async Task<List<T>> GetAll()
         {
-            return _context.Set<T>().ToListAsync();
+            return await _context.Set<T>().ToListAsync();
         }
 
         public Task<T> GetById(int id)

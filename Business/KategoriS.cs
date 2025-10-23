@@ -26,9 +26,9 @@ namespace Business
             return _kategori.Save(K);
         }
 
-        public Task Delete(Kategori K)
+        public Task Delete(int id)
         {
-            return _kategori.Delete(K);
+            return _kategori.Delete(id);
         }
 
         public Task<List<Kategori>> GetAll()

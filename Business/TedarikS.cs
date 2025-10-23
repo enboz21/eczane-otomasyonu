@@ -26,9 +26,9 @@ namespace Business
             return _tedarikci.Save(K);
         }
 
-        public Task Delete(Tedarikci K)
+        public Task Delete(int id)
         {
-            return _tedarikci.Delete(K);
+            return _tedarikci.Delete(id);
         }
 
         public Task<List<Tedarikci>> GetAll()

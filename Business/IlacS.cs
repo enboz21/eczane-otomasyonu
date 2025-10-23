@@ -2,6 +2,7 @@
 using DataAccess;
 using DataAccess.Interface;
 using Entities;
+using Entities.DTOs;
 namespace Business
 {
     public class IlacS : IIlacS
@@ -14,7 +15,7 @@ namespace Business
 
         public Task Add(Ilac ilac)
         {
-            if (String.IsNullOrWhiteSpace(ilac.IlacAd))
+            if (String.IsNullOrWhiteSpace(ilac.IlacAdi))
             {
                 throw new Exception("İlaç Adı Boş Geçilemez");
             }
@@ -34,9 +35,9 @@ namespace Business
 
         }
 
-        public Task Delete(Ilac ilac)
+        public Task Delete(int id)
         {
-            return _ilac.Delete(ilac);
+            return _ilac.Delete(id);
         }
 
         public Task<List<Ilac>> GetAll()
@@ -49,14 +50,14 @@ namespace Business
             return _ilac.GetById(id);
         }
 
-        public Task<List<Ilac>> GetIlacByDetay()
+        public Task<List<IlacDetayDto>> GetIlacByDetay()
         {
             return _ilac.IlacGetDetay();
         }
 
         public Task Update(Ilac ilac)
         {
-            if (String.IsNullOrWhiteSpace(ilac.IlacAd))
+            if (String.IsNullOrWhiteSpace(ilac.IlacAdi))
             {
                 throw new Exception("İlaç Adı Boş Geçilemez");
             }
