@@ -48,8 +48,8 @@ Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin:
 
 2.  **Projeyi Klonlama:**
     ```bash
-    git clone [SENİN GITHUB DEPO ADRESİN]
-    cd [PROJE KLASÖRÜNÜN ADI]
+    git clone https://github.com/enboz21/eczane-otomasyonu.git
+    cd eczane-otomasyonu
     ```
 
 3.  **Veritabanını Kurma:**
