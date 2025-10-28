@@ -74,9 +74,3 @@ Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin:
 ## 📄 Lisans
 
 Bu proje **MIT Lisansı** altında lisanslanmıştır. Daha fazla bilgi için lütfen depodaki `LICENSE` dosyasına bakın.
-
-*(Buraya istersen Copyright (c) 2025 [Adın Soyadın] gibi bir satır ekleyebilirsin)*
-
----
-
-*Bu README dosyasını kendi projenin detaylarına göre (kullandığın .NET sürümü, DevExpress sürümü, depo adresin vb.) güncellemeyi unutma.*
