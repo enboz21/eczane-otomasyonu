@@ -35,6 +35,7 @@
             simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             label1 = new Label();
             textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)gridControl1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridViewMarkalar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textEdit1.Properties).BeginInit();
@@ -42,10 +43,10 @@
             // 
             // gridControl1
             // 
-            gridControl1.Location = new Point(12, 109);
+            gridControl1.Location = new Point(12, 44);
             gridControl1.MainView = gridViewMarkalar;
             gridControl1.Name = "gridControl1";
-            gridControl1.Size = new Size(1039, 367);
+            gridControl1.Size = new Size(343, 188);
             gridControl1.TabIndex = 5;
             gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridViewMarkalar });
             // 
@@ -57,7 +58,7 @@
             // 
             // simpleButton3
             // 
-            simpleButton3.Location = new Point(976, 71);
+            simpleButton3.Location = new Point(280, 16);
             simpleButton3.Name = "simpleButton3";
             simpleButton3.Size = new Size(75, 23);
             simpleButton3.TabIndex = 9;
@@ -66,7 +67,7 @@
             // 
             // simpleButton2
             // 
-            simpleButton2.Location = new Point(895, 71);
+            simpleButton2.Location = new Point(199, 16);
             simpleButton2.Name = "simpleButton2";
             simpleButton2.Size = new Size(75, 23);
             simpleButton2.TabIndex = 8;
@@ -75,7 +76,7 @@
             // 
             // simpleButton1
             // 
-            simpleButton1.Location = new Point(814, 71);
+            simpleButton1.Location = new Point(118, 16);
             simpleButton1.Name = "simpleButton1";
             simpleButton1.Size = new Size(75, 23);
             simpleButton1.TabIndex = 7;
@@ -93,16 +94,26 @@
             // 
             // textEdit1
             // 
-            textEdit1.Location = new Point(87, 12);
+            textEdit1.Location = new Point(12, 18);
             textEdit1.Name = "textEdit1";
             textEdit1.Size = new Size(100, 20);
             textEdit1.TabIndex = 11;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(12, 2);
+            label2.Name = "label2";
+            label2.Size = new Size(64, 13);
+            label2.TabIndex = 12;
+            label2.Text = "Kategori adı";
             // 
             // frmKategoriler
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1063, 501);
+            ClientSize = new Size(364, 244);
+            Controls.Add(label2);
             Controls.Add(textEdit1);
             Controls.Add(label1);
             Controls.Add(gridControl1);
@@ -128,5 +139,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private Label label1;
         private DevExpress.XtraEditors.TextEdit textEdit1;
+        private Label label2;
     }
 }

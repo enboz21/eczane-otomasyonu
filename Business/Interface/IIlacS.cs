@@ -15,5 +15,6 @@ namespace Business.Interface
         public Task<Ilac> GetById(int id);
         public Task<List<Ilac>> GetAll();
         public Task<List<IlacDetayDto>> GetIlacByDetay();
+        Task<Ilac> GetByBarkodOrNameAsync(string s);
     }
 }

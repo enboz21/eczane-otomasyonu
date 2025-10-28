@@ -43,10 +43,10 @@
             // 
             // gridControl1
             // 
-            gridControl1.Location = new Point(12, 122);
+            gridControl1.Location = new Point(12, 48);
             gridControl1.MainView = gridViewMarkalar;
             gridControl1.Name = "gridControl1";
-            gridControl1.Size = new Size(866, 367);
+            gridControl1.Size = new Size(343, 188);
             gridControl1.TabIndex = 0;
             gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridViewMarkalar });
             // 
@@ -58,15 +58,15 @@
             // 
             // labelControl1
             // 
-            labelControl1.Location = new Point(12, 94);
+            labelControl1.Location = new Point(12, 3);
             labelControl1.Name = "labelControl1";
-            labelControl1.Size = new Size(47, 13);
+            labelControl1.Size = new Size(46, 13);
             labelControl1.TabIndex = 1;
-            labelControl1.Text = "Marka Adı";
+            labelControl1.Text = "Marka adı";
             // 
             // simpleButton1
             // 
-            simpleButton1.Location = new Point(285, 38);
+            simpleButton1.Location = new Point(118, 19);
             simpleButton1.Name = "simpleButton1";
             simpleButton1.Size = new Size(75, 23);
             simpleButton1.TabIndex = 2;
@@ -75,7 +75,7 @@
             // 
             // simpleButton2
             // 
-            simpleButton2.Location = new Point(366, 38);
+            simpleButton2.Location = new Point(199, 19);
             simpleButton2.Name = "simpleButton2";
             simpleButton2.Size = new Size(75, 23);
             simpleButton2.TabIndex = 3;
@@ -84,7 +84,7 @@
             // 
             // simpleButton3
             // 
-            simpleButton3.Location = new Point(447, 38);
+            simpleButton3.Location = new Point(280, 19);
             simpleButton3.Name = "simpleButton3";
             simpleButton3.Size = new Size(75, 23);
             simpleButton3.TabIndex = 4;
@@ -93,8 +93,8 @@
             // 
             // textEdit1
             // 
-            textEdit1.EditValue = "İLac Adı";
-            textEdit1.Location = new Point(25, 12);
+            textEdit1.EditValue = "";
+            textEdit1.Location = new Point(12, 22);
             textEdit1.Name = "textEdit1";
             textEdit1.Size = new Size(100, 20);
             textEdit1.TabIndex = 5;
@@ -112,7 +112,7 @@
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(890, 501);
+            ClientSize = new Size(364, 244);
             Controls.Add(label1);
             Controls.Add(textEdit1);
             Controls.Add(simpleButton3);

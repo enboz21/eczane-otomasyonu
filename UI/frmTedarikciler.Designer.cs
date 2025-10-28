@@ -38,6 +38,10 @@
             textEdit3 = new DevExpress.XtraEditors.TextEdit();
             textEdit4 = new DevExpress.XtraEditors.TextEdit();
             label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)gridControl1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridViewMarkalar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)textEdit1.Properties).BeginInit();
@@ -51,7 +55,7 @@
             gridControl1.Location = new Point(12, 109);
             gridControl1.MainView = gridViewMarkalar;
             gridControl1.Name = "gridControl1";
-            gridControl1.Size = new Size(1039, 367);
+            gridControl1.Size = new Size(774, 244);
             gridControl1.TabIndex = 5;
             gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gridViewMarkalar });
             // 
@@ -63,7 +67,7 @@
             // 
             // simpleButton3
             // 
-            simpleButton3.Location = new Point(976, 80);
+            simpleButton3.Location = new Point(707, 79);
             simpleButton3.Name = "simpleButton3";
             simpleButton3.Size = new Size(75, 23);
             simpleButton3.TabIndex = 9;
@@ -72,7 +76,7 @@
             // 
             // simpleButton2
             // 
-            simpleButton2.Location = new Point(895, 80);
+            simpleButton2.Location = new Point(626, 79);
             simpleButton2.Name = "simpleButton2";
             simpleButton2.Size = new Size(75, 23);
             simpleButton2.TabIndex = 8;
@@ -81,7 +85,7 @@
             // 
             // simpleButton1
             // 
-            simpleButton1.Location = new Point(814, 80);
+            simpleButton1.Location = new Point(545, 79);
             simpleButton1.Name = "simpleButton1";
             simpleButton1.Size = new Size(75, 23);
             simpleButton1.TabIndex = 7;
@@ -90,28 +94,28 @@
             // 
             // textEdit1
             // 
-            textEdit1.Location = new Point(47, 0);
+            textEdit1.Location = new Point(117, 4);
             textEdit1.Name = "textEdit1";
             textEdit1.Size = new Size(100, 20);
             textEdit1.TabIndex = 10;
             // 
             // textEdit2
             // 
-            textEdit2.Location = new Point(47, 26);
+            textEdit2.Location = new Point(117, 30);
             textEdit2.Name = "textEdit2";
             textEdit2.Size = new Size(100, 20);
             textEdit2.TabIndex = 11;
             // 
             // textEdit3
             // 
-            textEdit3.Location = new Point(47, 52);
+            textEdit3.Location = new Point(117, 56);
             textEdit3.Name = "textEdit3";
             textEdit3.Size = new Size(100, 20);
             textEdit3.TabIndex = 12;
             // 
             // textEdit4
             // 
-            textEdit4.Location = new Point(47, 78);
+            textEdit4.Location = new Point(117, 82);
             textEdit4.Name = "textEdit4";
             textEdit4.Size = new Size(100, 20);
             textEdit4.TabIndex = 13;
@@ -125,11 +129,51 @@
             label1.TabIndex = 14;
             label1.Visible = false;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(12, 7);
+            label2.Name = "label2";
+            label2.Size = new Size(66, 13);
+            label2.TabIndex = 15;
+            label2.Text = "Tedarikci adı";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(12, 33);
+            label3.Name = "label3";
+            label3.Size = new Size(81, 13);
+            label3.TabIndex = 16;
+            label3.Text = "Tedarikci adresi";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(12, 59);
+            label4.Name = "label4";
+            label4.Size = new Size(72, 13);
+            label4.TabIndex = 17;
+            label4.Text = "Tedarikci maili";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(12, 85);
+            label5.Name = "label5";
+            label5.Size = new Size(99, 13);
+            label5.TabIndex = 18;
+            label5.Text = "tedarikci telefon no";
+            // 
             // frmTedarikciler
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1063, 501);
+            ClientSize = new Size(790, 365);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(textEdit4);
             Controls.Add(textEdit3);
@@ -164,5 +208,9 @@
         private DevExpress.XtraEditors.TextEdit textEdit3;
         private DevExpress.XtraEditors.TextEdit textEdit4;
         private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private Label label5;
     }
 }

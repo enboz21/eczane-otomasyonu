@@ -20,7 +20,7 @@ namespace DataAccess
 
         public Task<List<SatisDetay>> SatisDetayGetAll()
         {
-            return _context.SatisDetayları
+            return _context.SatisDetaylari
                 .Include(sd => sd.Satis)
                 .Include(sd => sd.Stok)
                 .Include(sd => sd.Ilac).ToListAsync();

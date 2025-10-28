@@ -11,5 +11,6 @@ namespace DataAccess.Interface
     public interface IIlac : IGeneric<Ilac>
     {
         public Task<List<IlacDetayDto>> IlacGetDetay();
+        Task<Ilac> GetByBarkodOrNameAsync(string s);
     }
 }

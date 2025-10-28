@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entities;
+using Entities.DTOs;
 
 namespace Business.Interface
 {
@@ -15,5 +16,7 @@ namespace Business.Interface
         public Task<Stok> GetById(int id);
         public Task<List<Stok>> GetAll();
         public Task<List<Stok>> GetStokByDetay();
+        public Task<List<Stok>> GetAvailableBatchesOrderedByExpiryAsync(int Id);
+        public Task<List<StokDetayDTO>> StokDetay();
     }
 }

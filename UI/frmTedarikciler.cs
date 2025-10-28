@@ -141,6 +141,7 @@ namespace UI
         {
             var tedari = await _tedarikcis.GetAll();
             gridControl1.DataSource = tedari;
+            gridViewMarkalar.PopulateColumns();
             gridViewMarkalar.Columns["TedarikciId"].Visible = false;
             gridViewMarkalar.Columns["Stoklar"].Visible = false;
         }

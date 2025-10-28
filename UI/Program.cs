@@ -55,8 +55,8 @@ namespace UI
             services.AddTransient<ISatisS, SatisS>();
             services.AddTransient<ITedarikS, TedarikS>();
 
-
-
+            services.AddTransient<frmSatisEkrani>();
+            services.AddTransient<frmStokRaporu>();
             services.AddTransient<Main>();
             services.AddTransient<frmIlaclar>();
             services.AddTransient<frmMarkalar>();

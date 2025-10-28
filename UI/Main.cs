@@ -56,5 +56,15 @@ namespace UI
         {
 
         }
+
+        private void btnSatisEkrani_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Formac<frmSatisEkrani>();
+        }
+
+        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Formac<frmStokRaporu>();
+        }
     }
 }

@@ -45,6 +45,11 @@ namespace Business
             return _ilac.GetAll();
         }
 
+        public Task<Ilac> GetByBarkodOrNameAsync(string s)
+        {
+            return _ilac.GetByBarkodOrNameAsync(s);
+        }
+
         public Task<Ilac> GetById(int id)
         {
             return _ilac.GetById(id);

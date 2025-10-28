@@ -25,7 +25,7 @@ namespace DataAccess.Context
         public DbSet<Stok> Stok { get; set; }
         public DbSet<Kategori> Kategoriler { get; set; }
         public DbSet<Satis> Satislar { get; set; }
-        public DbSet<SatisDetay> SatisDetayları { get; set; }
+        public DbSet<SatisDetay> SatisDetaylari { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Entities;
+using Entities.DTOs;
 
 namespace Business.Interface
 {
@@ -14,5 +15,6 @@ namespace Business.Interface
         public Task Add(Satis K);
         public Task<Satis> GetById(int id);
         public Task<List<Satis>> GetAll();
+        Task PerformSale(Satis satis, List<SDDTO> detaylar);
     }
 }

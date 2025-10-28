@@ -42,5 +42,11 @@ namespace DataAccess
 
 
         }
+        public async Task<Ilac> GetByBarkodOrNameAsync(string s)
+        {
+            s = s.Trim().ToLower(); 
+            return await _context.Ilaclar
+                       .FirstOrDefaultAsync(i => i.Barkod == s|| i.IlacAdi.ToLower().Contains(s));
+        }
     }
 }

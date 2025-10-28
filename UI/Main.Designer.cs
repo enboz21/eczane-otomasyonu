@@ -41,15 +41,16 @@
             ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)ribbon).BeginInit();
             SuspendLayout();
             // 
             // ribbon
             // 
             ribbon.ExpandCollapseItem.Id = 0;
-            ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbon.ExpandCollapseItem, ribbon.SearchEditItem, btnMarkaYonetimi, btnIlacYonetimi, btnKategoriYonetimi, btnTedarikciYonetimi, btnStokGiris, btnSatisEkrani });
+            ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] { ribbon.ExpandCollapseItem, ribbon.SearchEditItem, btnMarkaYonetimi, btnIlacYonetimi, btnKategoriYonetimi, btnTedarikciYonetimi, btnStokGiris, btnSatisEkrani, barButtonItem1 });
             ribbon.Location = new Point(0, 0);
-            ribbon.MaxItemId = 7;
+            ribbon.MaxItemId = 8;
             ribbon.Name = "ribbon";
             ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] { ribbonPage1 });
             ribbon.Size = new Size(864, 158);
@@ -96,6 +97,7 @@
             btnSatisEkrani.Caption = "Yeni Satış Ekranı";
             btnSatisEkrani.Id = 6;
             btnSatisEkrani.Name = "btnSatisEkrani";
+            btnSatisEkrani.ItemClick += btnSatisEkrani_ItemClick;
             // 
             // ribbonPage1
             // 
@@ -115,6 +117,7 @@
             // ribbonPageGroup2
             // 
             ribbonPageGroup2.ItemLinks.Add(btnStokGiris);
+            ribbonPageGroup2.ItemLinks.Add(barButtonItem1);
             ribbonPageGroup2.Name = "ribbonPageGroup2";
             ribbonPageGroup2.Text = "Stok İşlemleri";
             // 
@@ -135,6 +138,13 @@
             // 
             ribbonPage4.Name = "ribbonPage4";
             ribbonPage4.Text = "ribbonPage4";
+            // 
+            // barButtonItem1
+            // 
+            barButtonItem1.Caption = "Stok raporu";
+            barButtonItem1.Id = 7;
+            barButtonItem1.Name = "barButtonItem1";
+            barButtonItem1.ItemClick += barButtonItem1_ItemClick;
             // 
             // Main
             // 
@@ -169,5 +179,6 @@
         private DevExpress.XtraBars.BarButtonItem btnSatisEkrani;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }

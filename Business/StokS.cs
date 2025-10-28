@@ -7,6 +7,7 @@ using Business.Interface;
 using DataAccess.Interface;
 using DataAccess;
 using Entities;
+using Entities.DTOs;
 namespace Business
 {
     public class StokS : IStokS
@@ -44,6 +45,11 @@ namespace Business
             return _stok.GetAll();
         }
 
+        public Task<List<Stok>> GetAvailableBatchesOrderedByExpiryAsync(int Id)
+        {
+            return _stok.GetAvailableBatchesOrderedByExpiryAsync(Id);
+        }
+
         public Task<Stok> GetById(int id)
         {
             return _stok.GetById(id);
@@ -52,6 +58,11 @@ namespace Business
         public Task<List<Stok>> GetStokByDetay()
         {
             return _stok.StokGetDetay();
+        }
+
+        public Task<List<StokDetayDTO>> StokDetay()
+        {
+            return _stok.StokDetay();
         }
 
         public Task Update(Stok stok)
